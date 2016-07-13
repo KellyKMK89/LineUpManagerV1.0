@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        tools:context=".TeamDetailActivity">
+
+        <TextView
+            android:id="@+id/lblTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:gravity="fill_horizontal|center_horizontal"
+            android:text="Team"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+        <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/GridLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentTop="false"
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_below="@id/lblTitle"
+            android:layout_centerHorizontal="true"
+            android:columnCount="2"
+            android:orientation="vertical"
+            android:rowCount="10"
+            tools:context=".TeamDetailActivity">
+
+            <ListView
+                android:layout_width="220dp"
+                android:layout_height="300dp"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:id="@+id/listView"
+                android:smoothScrollbar="true" />
+
+            <TextView
+                android:id="@+id/lblNotes"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="top"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="2"
+                android:text="Notes:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+            <EditText
+                android:id="@+id/txtNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_row="3"
+                android:ems="10"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:inputType="textMultiLine"
+                android:lines="4"
+                android:maxLines="12"
+                android:minLines="1"
+                android:scrollbars="vertical"
+                android:imeOptions="actionDone"/>
+
+        </GridLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/GridLayout1"
+            android:layout_centerHorizontal="true">
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:id="@+id/btnEditTeam"
+                android:onClick="editTeam"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:id="@+id/btnRemoveTeam"
+                android:onClick="removeTeam"/>
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
